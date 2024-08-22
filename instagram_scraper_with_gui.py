@@ -142,6 +142,7 @@ def main():
                         [
                             usertag.user.username
                             for usertag in getattr(media, "usertags", [])
+                            if hasattr(usertag, 'user')
                         ]
                     )
                     for media in medias
@@ -151,6 +152,7 @@ def main():
                         [
                             sponsor_tag.username
                             for sponsor_tag in getattr(media, "sponsor_tags", [])
+                            if hasattr(sponsor_tag, 'username')
                         ]
                     )
                     for media in medias
